@@ -1,75 +1,73 @@
-.carousel-iner{
-    width: 100px;
-}
-
-
 .carousel.slide {
-    height: 800px;
-    width: 600px;
-    background-color: #7fb0f1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.253) 0px 5px 15px;
+  height: 800px;
+  width: 600px;
+  background-color: #7fb0f1;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
 }
 
-.LoginCard {
-    margin: 0 auto;
-   width: 100px;
-   height: 800px;
-   justify-content: center;
-   align-items: center;
+.carousel-inner {
+  width: 100%;
+  height: 100%;
+}
 
+.carousel-item {
+  width: 100%;
+  height: 100%;
 }
 
 
-.carousel-control-prev{
-    background-color: rgba(23, 179, 18, 0);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
+.slide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.carousel-inner .carousel-item:nth-child(3),
+.carousel-inner .carousel-item:nth-child(3).active {
+  background-color: #ffffff;
+}
+
+
+.card-login {
+  background: white;
+  width: 420px;
+  padding: 30px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.email-field,
+.pass-field {
+  width: 100%;
+  max-width: 360px;
+  height: 37px;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgba(0,0,0,.2) 0px 12px 28px,
+              rgba(0,0,0,.1) 0px 2px 4px;
+}
+
+.text-welcome,
+.text-about {
+  color: white;
+  text-align: center;
   
 }
 
-.carousel-control-next{
-    background-color: rgba(25, 116, 161, 0);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-
-.text-welcome{
-  color: rgb(255, 255, 255);
-}
-
-.text-about{
-    color: rgb(255, 255, 255);
-}
-
-
-.card-about{
+.submit-login{
   width: 100%;
-  padding: 30px;
- 
-}
+background-color: rgb(71, 160, 130);
+ border-radius: 20px;
+ transition: 3s;
 
-.card-login{
-    width: 100%;
-    justify-content: center;
-}
-.name-field{
-    width: 380px;
-    height: 35px;
-    border: none;
-    border-radius:20px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-}
-
-.email-field{
-    width: 380px;
-    height: 35px;
-    border: none;
-    border-radius:20px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
