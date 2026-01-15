@@ -1,0 +1,11 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+ .Navbar{
+  width: 100%;
+  background-color: blueviolet;
+  height: 30px;
+ }

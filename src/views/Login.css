@@ -1,0 +1,32 @@
+.carousel-iner{
+    width: 100px;
+}
+
+.carousel.slide {
+    height: 200px;
+    width: 200px;
+}
+
+.CardLogin{
+    width: 500px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+    transition: transform 0.3s;
+}
+
+.carousel-control-prev{
+    background-color: rgba(179, 18, 18, 0.884);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.carousel-control-next{
+    background-color: rgba(25, 116, 161, 0.63);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
