@@ -53,7 +53,7 @@ function Login() {
               <input type="text" placeholder="Email..." className="email-field" />
               <input type="password" placeholder="Senha..." className="pass-field" />
               <div className="forgot-pass">
-                Esqueci minha senha
+                Esqueceu a senha?
                 </div>
               <button className="submit-login">submit</button>
             </div>
