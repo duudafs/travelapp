@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 .carousel.slide {
   height: 800px;
   width: 600px;
@@ -64,10 +66,14 @@
   
 }
 
-.submit-login{
+.submit-login {
   width: 100%;
-background-color: rgb(71, 160, 130);
- border-radius: 20px;
- transition: 3s;
+  background-color: rgb(71, 160, 130);
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+.submit-login:hover {
+  background-color: rgb(142, 206, 185);
+  transform: translateY(-4px);
 }

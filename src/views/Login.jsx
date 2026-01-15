@@ -52,6 +52,9 @@ function Login() {
               <h3>Faça login</h3>
               <input type="text" placeholder="Email..." className="email-field" />
               <input type="password" placeholder="Senha..." className="pass-field" />
+              <div className="forgot-pass">
+                Esqueci minha senha
+                </div>
               <button className="submit-login">submit</button>
             </div>
           </div>
