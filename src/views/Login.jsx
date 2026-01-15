@@ -1,4 +1,5 @@
 import './Login.css'
+import { Link } from "react-router-dom"
 
 function Login() {
   return (
@@ -56,7 +57,14 @@ function Login() {
                 Esqueceu a senha?
                 </div>
               <button className="submit-login">submit</button>
+                <div className="divider-line">
+                   <div className="registrar">
+          Não tem conta? <Link to="/registro"><strong style={{ color: "rgb(71, 160, 130)" }}>Clique aqui</strong></Link>
+
+</div>
+</div>
             </div>
+       
           </div>
         </div>
 
