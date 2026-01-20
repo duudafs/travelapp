@@ -1,30 +1,105 @@
-.card-registro{
-height: 800px;
-  width: 600px;
-  background-color: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+* {
+  box-sizing: border-box;
 }
 
-.nome-input{
-  width: 100%;
-  max-width: 360px;
-  font-size: 14px;
-  height: 38px;
-  margin-bottom: 15px;
-  padding-left: 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: #f3eeee;
+body {
+  background: #ffffff;
+  font-family: 'Lexend', sans-serif;
 }
 
-.sobrenome-input{
-  width: 100%;
-  max-width: 360px;
-  font-size: 14px;
-  height: 38px;
-  margin-bottom: 39px;
-  padding-left: 20px;
-  border: none;
+.card-registro {
+  width: 420px;
+  padding: 32px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  color: rgb(44, 24, 24);
+  font-family: 'Lexend', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card-registro h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.container-registro {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.col.full {
+  flex: 100%;
+}
+
+label {
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #797979;
+  font-weight: bold;
+  text-align: left;
+}
+
+input,
+select {
+  height: 42px;
+  padding: 0 14px;
   border-radius: 20px;
-  background-color: #f3eeee;
+  border: none;
+  background: #f0efef;
+ color: #bbbbbb;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #bbbbbb;
+}
+
+select {
+  appearance: none;
+  text-transform: uppercase;
+}
+
+.hint {
+  font-size: 11px;
+  color: #777;
+  margin-top: 6px;
+}
+
+button {
+  width: 100%;
+  color: white;
+  background-color: rgb(71, 160, 130);
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(142, 206, 158);
+  transform: translateY(-4px);
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.login-text {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.login-text span {
+  color: white;
+  cursor: pointer;
 }
