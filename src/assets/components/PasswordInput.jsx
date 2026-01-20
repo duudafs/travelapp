@@ -1,7 +1,27 @@
 import { Password } from "primereact/password"
-
+import { useEffect, useState } from "react"
 
 function PasswordInput({ label, value, onChange }) {
+   const [erro, setErro] = useState("")
+   
+  useEffect (() => {
+    validarSenha(value)
+  }, [value])
+
+   function validarSenha(senha) {
+    if (!senha) {
+      setErro("")
+      return
+    }
+
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
+
+    if (!regex.test(senha)) {
+      setErro("a senha não atende aos requisitos")
+    } else {
+      setErro("")
+    }
+  }
   
   const footer = (
     <>
@@ -21,12 +41,13 @@ function PasswordInput({ label, value, onChange }) {
 
       <Password
         value={value}
-        className="senha-input"
+        className={`senha-input ${erro ? "p-invalid" : ""}`}
         placeholder="Senha..."
         onChange={(e) => onChange(e.target.value)}
         toggleMask
         footer={footer}
       />
+      {erro && <small className="p-error">{erro}</small>}
     </div>
   )
 }
