@@ -1,18 +1,21 @@
 import "./Registro.css"
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import PasswordInput from "../assets/components/PasswordInput";
+
 
 function Registro() {
-const [nome, setNome] = useState("")
-const [sobrenome, setSobrenome] = useState("")
-const [uf, setUF] = useState("UF")
-const [cidade, setCidade] = useState("")
-const [email, setEmail] = useState("")
-const [senha, setSenha] = useState("")
+    const [nome, setNome] = useState("")
+    const [sobrenome, setSobrenome] = useState("")
+    const [uf, setUF] = useState("UF")
+    const [cidade, setCidade] = useState("")
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+  
 
-const handleChange = (event) =>{
-    setUF(event.target.value)
-}
+    const handleChange = (event) => {
+        setUF(event.target.value)
+    }
 
     return (
         <div className="card-registro">
@@ -57,31 +60,34 @@ const handleChange = (event) =>{
 
                     <div className="col">
                         <label>Cidade</label>
-                        <input type="text" 
-                        placeholder="Cidade..."
-                        value={cidade} 
-                        onChangeCapture={(e) => setCidade(e.target.value)}/>
+                        <input type="text"
+                            placeholder="Cidade..."
+                            value={cidade}
+                            onChange={(e) => setCidade(e.target.value)} />
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col full">
                         <label>Email</label>
-                        <input type="email" 
-                        placeholder="Email..."
-                        value={email}
-                        onChangeCapture={(e) => setEmail(e.target.value)} />
+                        <input type="email"
+                            placeholder="Email..."
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)} />
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col full">
-                        <label>Senha</label>
-                        <input type="password" 
-                        placeholder="Digite sua senha..."
-                        value={senha}
-                        onChangeCapture={(e) => setSenha(e.target.value)} />
-                        <span className="hint">A senha deve conter pelo menos 8 caracteres.</span>
+
+                        <PasswordInput
+                            label="Senha"
+                            placeholder="Senha..."
+                            value={senha}
+                            onChange={setSenha}
+                        />
+
+                      
                     </div>
                 </div>
 
