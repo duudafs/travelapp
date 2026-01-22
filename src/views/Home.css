@@ -10,26 +10,22 @@ body{
 }
 
 .container-cat {
-  width: 930px;
+  width: 1230px;
   height: 460px;
   background-color: rgb(255, 255, 255);
 }
 
-.btn-todas,
-.btn-nacional,
-.btn-internacional{
-    width: auto;
-    height: 45px;
-   background-color: rgb(25, 201, 63);
-   margin-left: 20px;
-   border-radius: 20px;
-   
+
+.nav-cat-link.active {
+  background-color: #736891;
+  color: white;
 }
 
-.btn-todas,
-.btn-nacional,
-.btn-internacional:hover {
- background-color: rgb(40, 25, 128);
-  transform: translateY(-4px);
-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+.nav-cat-link{
+    background-color: rgb(255, 255, 255);
+   color: black;
+}
+
+.nav-cat-link:hover{
+   background-color: #f0ebff;
 }

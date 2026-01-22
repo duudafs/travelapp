@@ -1,8 +1,10 @@
-import  './Home.css'
+import './Home.css'
+import { useState } from 'react'
+
 import CardCategoria from '../assets/components/CardCategoria'
 
 function Home() {
-  
+
   const categorias = [
     {
       id: 1,
@@ -23,63 +25,83 @@ function Home() {
       rota: '/cat3'
     }
   ]
+
+    const [active, setActive] = useState('todas')
   return (
     <>
-     
+
 
       <section className="section-categories">
         <div className="container">
-    <div className="container-cat">
-      <row>
-        <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li className="nav-item" role="presentation">
-    <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-todas" type="button" role="tab" aria-controls="pills-todas" aria-selected="true">Todas</button>
-  </li>
-  <li className="nav-item" role="presentation">
-    <button className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-nacional" type="button" role="tab" aria-controls="pills-nacional" aria-selected="false">Nacional</button>
-  </li>
-  <li className="nav-item" role="presentation">
-    <button className="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-internacional" type="button" role="tab" aria-controls="pills-internacional" aria-selected="false">Internacional</button>
-  </li>
-  
-</ul>
-<div className="tab-content" id="pills-tabContent">
-  <div className="tab-pane fade show active" id="pills-todas" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-         {categorias.map((cat) => (
-  <CardCategoria
-    key={cat.id}
-    nome={cat.nome}
-    desc={cat.desc}
-    rota={cat.rota}
-  />
-))}
-  </div>
-  <div className="tab-pane fade" id="pills-nacional" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-         {categorias.map((cat) => (
-  <CardCategoria
-    key={cat.id}
-    nome={cat.nome}
-    desc={cat.desc}
-    rota={cat.rota}
-  />
-))}
-  </div>
-  <div className="tab-pane fade" id="pills-internacional" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-         {categorias.map((cat) => (
-  <CardCategoria
-    key={cat.id}
-    nome={cat.nome}
-    desc={cat.desc}
-    rota={cat.rota}
-  />
-))}
-  </div>
+          <div className="container-cat">
+            <row>
+              <ul className="nav nav-pills mb-3">
+      <li className="nav-item">
+        <button
+          className={`nav-cat-link ${active === 'todas' ? 'active' : ''}`}
+          onClick={() => setActive('todas')}
+        >
+          Todas
+        </button>
+      </li>
 
-</div>
-      </row>
+      <li className="nav-item">
+        <button
+          className={`nav-cat-link ${active === 'nacional' ? 'active' : ''}`}
+          onClick={() => setActive('nacional')}
+        >
+          Nacional
+        </button>
+      </li>
 
-    </div>
-  </div>
+      <li className="nav-item">
+        <button
+          className={`nav-cat-link ${active === 'internacional' ? 'active' : ''}`}
+          onClick={() => setActive('internacional')}
+        >
+          Internacional
+        </button>
+      </li>
+    </ul>
+   
+   
+              <div className="tab-content" id="pills-tabContent">
+                <div className="tab-pane fade show active" id="pills-todas" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                  {categorias.map((cat) => (
+                    <CardCategoria
+                      key={cat.id}
+                      nome={cat.nome}
+                      desc={cat.desc}
+                      rota={cat.rota}
+                    />
+                  ))}
+                </div>
+                <div className="tab-pane fade" id="pills-nacional" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                  {categorias.map((cat) => (
+                    <CardCategoria
+                      key={cat.id}
+                      nome={cat.nome}
+                      desc={cat.desc}
+                      rota={cat.rota}
+                    />
+                  ))}
+                </div>
+                <div className="tab-pane fade" id="pills-internacional" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                  {categorias.map((cat) => (
+                    <CardCategoria
+                      key={cat.id}
+                      nome={cat.nome}
+                      desc={cat.desc}
+                      rota={cat.rota}
+                    />
+                  ))}
+                </div>
+
+              </div>
+            </row>
+
+          </div>
+        </div>
       </section>
     </>
   )
