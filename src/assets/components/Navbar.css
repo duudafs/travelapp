@@ -1,0 +1,16 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgb(15, 182, 126);
+    
+}
+.search{
+    border-radius: 20px;
+ margin-left: 50px;
+ width: 450px;
+ border: none;
+ background-color: rgb(240, 240, 240);
+}

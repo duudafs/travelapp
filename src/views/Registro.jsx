@@ -11,17 +11,53 @@ function Registro() {
     const [cidade, setCidade] = useState("")
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
-  
 
     const handleChange = (event) => {
         setUF(event.target.value)
     }
 
+const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const dados = {
+    nome,
+    sobrenome,
+    email,
+    senha,
+    cidade,
+    uf
+  }
+
+  try {
+    const res = await fetch("http://localhost:3000/api/cadastro", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dados)
+    })
+
+    const data = await res.json()
+
+    if (!res.ok) {
+      alert(data.msg)
+      return
+    }
+
+    alert("cadastro realizado com sucesso")
+    console.log(data)
+
+  } catch (error) {
+    alert("erro ao conectar com o servidor")
+    console.error(error)
+  }
+}
+
     return (
         <div className="card-registro">
             <h2>sign up</h2>
 
-            <form className="container-registro">
+            <form className="container-registro" onSubmit={handleSubmit}>
 
                 <div className="row">
                     <div className="col">

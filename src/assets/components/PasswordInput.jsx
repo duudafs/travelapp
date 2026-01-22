@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 
 function PasswordInput({ label, value, onChange }) {
    const [erro, setErro] = useState("")
-   
   useEffect (() => {
     validarSenha(value)
   }, [value])
