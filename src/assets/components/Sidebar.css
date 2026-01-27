@@ -47,14 +47,15 @@ left: 100px;
 
 .nav-sidebar-links {
   margin-top: 120px;
+
   display: flex;
-  flex-direction: column;
   gap: 16px;
-   color: #ffffff;
+   color: #000000;
 }
 
-.nav-sidebar-links.active {
- background-color: aqua;
+.nav-sidebar-link.active {
+  background-color: #fa7203;
+  color: white;
 }
 
 

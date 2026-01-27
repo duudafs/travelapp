@@ -18,17 +18,38 @@ function Sidebar() {
                 <button className="close-btn" onClick={() => setVisible(false)}>X</button>
                 <div className="divider-line"></div>
 
-                <ul className="nav sidebar-links">
-                    <Link to="/home">
-                        <li><button className={`nav-sidebar-link ${activeLink === 'home' ? 'active' : ''}`} onClick={() => setActiveLink('home')}>Home</button></li>
-                    </Link>
-                    <Link to="/categorias">
-                        <li><button className={`nav-sidebar-link ${activeLink === 'categorias' ? 'active' : ''}`} onClick={() => setActiveLink('categorias')}>Categorias</button></li>
-                    </Link>
-                    <Link to="/perfil">
-                        <li><button className={`nav-sidebar-link ${activeLink === 'perfil' ? 'active' : ''}`} onClick={() => setActiveLink('perfil')}>Perfil</button></li>
-                    </Link>
-
+                <ul className="nav-pills  sidebar-links">
+                   
+                    <li>
+                        <Link to="/home">
+                            <button 
+                                className={`nav-sidebar-link ${activeLink === 'home' ? 'active' : ''}`} 
+                                onClick={() => setActiveLink('home')}
+                            >
+                                Home
+                            </button>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/categorias">
+                            <button 
+                                className={`nav-sidebar-link ${activeLink === 'categorias' ? 'active' : ''}`} 
+                                onClick={() => setActiveLink('categorias')}
+                            >
+                                Categorias
+                            </button>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/perfil">
+                            <button 
+                                className={`nav-sidebar-link ${activeLink === 'perfil' ? 'active' : ''}`} 
+                                onClick={() => setActiveLink('perfil')}
+                            >
+                                Perfil
+                            </button>
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </>
