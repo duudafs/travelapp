@@ -2,7 +2,7 @@ body{
       margin: 0;
 }
 .section-categories {
-   background-color: rgb(208, 221, 223);
+   background-color: rgb(255, 255, 255);
    width: 100vw;
   margin-left: calc(50% - 50vw);
   height: 460px;
@@ -15,17 +15,99 @@ body{
   background-color: rgb(255, 255, 255);
 }
 
+.container-home{
+    margin-top: 100px;
+}
+
+.nav-cat-link-bioma {
+  background-color: #ffffff;
+  color: black;
+}
+
+.nav-cat-link-bioma.active{
+     background-color: #c20292;
+     color: #ffffff;
+}
+
+.nav-cat-link-bioma:hover{
+   background-color: #eccfe2;
+   color: black;
+}
 
 .nav-cat-link.active {
-  background-color: #736891;
+  background-color: #c20292;
   color: white;
 }
 
 .nav-cat-link{
     background-color: rgb(255, 255, 255);
    color: black;
+ 
 }
 
 .nav-cat-link:hover{
-   background-color: #f0ebff;
+   background-color: #eccfe2;
+}
+
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-home {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  margin-top: 40px;
+  padding: 16px 40px;
+}
+
+.carousel-home::-webkit-scrollbar {
+  display: none;
+}
+
+.card-categoria {
+  min-width: 280px;
+  flex-shrink: 0;
+}
+
+
+
+
+.carousel-home-control-prev,
+.carousel-home-control-next {
+  position: absolute;
+  top: 30%;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-home-control-prev:hover {
+     background: rgb(255, 255, 255);
+}
+.carousel-home-control-next:hover {
+  background: rgb(255, 255, 255);
+}
+
+.carousel-home-control-prev {
+  left: 0;
+}
+
+.carousel-home-control-next {
+  right: 0;
+}
+
+
+.section-other {
+  width: 100vw;
+  height: 560px;
+  background-color: rgb(223, 235, 236);
+  padding: 40px 0;
+  margin-left: calc(50% - 50vw);
 }
