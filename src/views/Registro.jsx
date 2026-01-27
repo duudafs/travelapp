@@ -127,7 +127,7 @@ const handleSubmit = async (e) => {
                     </div>
                 </div>
 
-                <button type="submit">Cadastrar</button>
+                <button className="btn-cadastrar" type="submit">Cadastrar</button>
 
                 <p className="login-text">
                     Já tem uma conta? <Link to="/"><strong style={{ color: "rgb(71, 160, 130)" }}>fazer login</strong></Link>

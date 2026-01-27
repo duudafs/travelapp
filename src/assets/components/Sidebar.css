@@ -1,0 +1,60 @@
+.sidebar-button {
+  background-color: #ffffff;
+  color: black;
+  width: 20px;
+  top: 50px;
+  font-size: 26px;
+  cursor: pointer;
+  position: fixed;
+left: 0;
+}
+
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 9;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 3000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.close-btn {
+ background-color: none;
+  color: black;
+  width: 20px;
+  top: 0px;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+left: 100px;
+}
+
+.nav-sidebar-links {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+   color: #ffffff;
+}
+
+.nav-sidebar-links.active {
+ background-color: aqua;
+}
+
+

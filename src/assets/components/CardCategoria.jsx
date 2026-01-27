@@ -13,8 +13,11 @@ function CardCategoria({ nome, desc, rota, images, icon }) {
           {desc}
         </h6>
       </div>
+      
     </Link>
   )
 }
 
 export default CardCategoria
+
+

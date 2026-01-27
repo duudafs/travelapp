@@ -9,29 +9,29 @@ body{
 
 }
 
-.container-cat {
-  width: 1230px;
-  height: 460px;
-  background-color: rgb(255, 255, 255);
-}
 
 .container-home{
     margin-top: 100px;
+    
 }
 
 .nav-cat-link-bioma {
   background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   color: black;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-cat-link-bioma.active{
-     background-color: #c20292;
+     background-color: #fa7203;
      color: #ffffff;
 }
 
 .nav-cat-link-bioma:hover{
-   background-color: #eccfe2;
+   background-color: #ffffff;
    color: black;
+    transform: translateY(-4px);
 }
 
 .nav-cat-link.active {
@@ -41,17 +41,24 @@ body{
 
 .nav-cat-link{
     background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+     border-radius: 20px;
    color: black;
+   transition: background-color 0.3s ease, transform 0.3s ease;
  
 }
 
 .nav-cat-link:hover{
-   background-color: #eccfe2;
+   background-color: #f8e7f2;
+   color: black;
+    transform: translateY(-4px);
 }
 
 
 .carousel-wrapper {
   position: relative;
+  width: 1700px;
+  margin: 0 auto;
 }
 
 .carousel-home {
@@ -110,4 +117,17 @@ body{
   background-color: rgb(223, 235, 236);
   padding: 40px 0;
   margin-left: calc(50% - 50vw);
+}
+
+.create-album{
+    width: 400px;
+    height: 200px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: rgb(70, 160, 10);
+     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.create-album:hover{
+    background-color: #ffffff;
 }

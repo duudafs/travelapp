@@ -1,16 +1,25 @@
 import './Home.css'
 import { useRef, useState, useEffect } from 'react'
 import CardCategoria from '../assets/components/CardCategoria'
-
-import iconLocal from  '../assets/images/iconLocal.png' 
+import Sidebar from '../assets/components/Sidebar'
+import { Link } from "react-router-dom"
+import iconLocal from '../assets/images/iconLocal.png'
 import liberdade from '../assets/images/liberdade.jpg'
 
 function Home() {
   const categorias = [
     { id: 1, nome: 'Liberdade', desc: 'São Paulo, SP', rota: '/cat1', tipo: 'nacional', images: liberdade, icon: iconLocal, bioma: 'cultural' },
     { id: 2, nome: 'categoria 2', desc: 'descrição 2', rota: '/cat2', tipo: 'internacional', icon: iconLocal, bioma: 'cultural' },
-    { id: 3, nome: 'categoria 3', desc: 'descrição 3', rota: '/cat3', tipo: 'nacional', icon: iconLocal, bioma: 'praia' }
+    { id: 3, nome: 'categoria 3', desc: 'descrição 3', rota: '/cat3', tipo: 'nacional', icon: iconLocal, bioma: 'praia' },
+    { id: 4, nome: 'categoria 4', desc: 'descrição 4', rota: '/cat4', tipo: 'nacional', icon: iconLocal, bioma: 'praia' },
+    { id: 5, nome: 'categoria 5', desc: 'descrição 5', rota: '/cat5', tipo: 'internacional', icon: iconLocal, bioma: 'praia' },
+    { id: 6, nome: 'categoria 6', desc: 'descrição 6', rota: '/cat6', tipo: 'nacional', icon: iconLocal, bioma: 'cultural' },
+    { id: 7, nome: 'categoria 7', desc: 'descrição 7', rota: '/cat7', tipo: 'nacional', icon: iconLocal, bioma: 'praia' }
   ];
+
+
+const visibleCards = 3;
+const cardWidth = 300; 
 
   const [activeBioma, setActiveBioma] = useState('explorar');
   const [activeCategoria, setActiveCategoria] = useState('todas');
@@ -23,29 +32,41 @@ function Home() {
   });
 
   const scrollLeft = () => {
-    carouselRef.current.scrollBy({ left: -320, behavior: 'smooth' });
+    carouselRef.current.scrollBy({ left: -cardWidth * visibleCards, behavior: 'smooth' });
   };
 
   const scrollRight = () => {
-    carouselRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+    carouselRef.current.scrollBy({ left: cardWidth * visibleCards, behavior: 'smooth' });
   };
 
   useEffect(() => {
     carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
   }, [activeBioma, activeCategoria]);
 
+
+
   return (
     <>
       <section className="section-categories">
         <div className="container-home">
-
-          <ul className="nav nav-pills-bioma">
-            <li><button className={`nav-cat-link-bioma ${activeBioma === 'explorar' ? 'active' : ''}`} onClick={() => setActiveBioma('explorar')}>Explorar</button></li>
+          
+            <Sidebar />
+        
+          <ul className="nav nav-pills-bioma" style={{ marginLeft: '150px', gap: '20px', position: 'relative' }}>
+            <li>
+              <button 
+                className={`nav-cat-link-bioma ${activeBioma === 'explorar' ? 'active' : ''}`} 
+                onClick={() => setActiveBioma('explorar')}
+              >
+                <img src={iconLocal} alt="Explorar Icon" style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+                Explorar
+              </button>
+            </li>
             <li><button className={`nav-cat-link-bioma ${activeBioma === 'praia' ? 'active' : ''}`} onClick={() => setActiveBioma('praia')}>Praia</button></li>
             <li><button className={`nav-cat-link-bioma ${activeBioma === 'cultural' ? 'active' : ''}`} onClick={() => setActiveBioma('cultural')}>Cultural</button></li>
           </ul>
 
-          <ul className="nav nav-pills mt-3" style={{ marginLeft: '40px', gap: '20px' }}>
+          <ul className="nav nav-pills mt-3" style={{ marginLeft: '150px', gap: '20px', position: 'relative' }}>
             <li><button className={`nav-cat-link ${activeCategoria === 'todas' ? 'active' : ''}`} onClick={() => setActiveCategoria('todas')}>Todas</button></li>
             <li><button className={`nav-cat-link ${activeCategoria === 'nacional' ? 'active' : ''}`} onClick={() => setActiveCategoria('nacional')}>Nacional</button></li>
             <li><button className={`nav-cat-link ${activeCategoria === 'internacional' ? 'active' : ''}`} onClick={() => setActiveCategoria('internacional')}>Internacional</button></li>
@@ -82,8 +103,8 @@ function Home() {
 
       <section className="section-other">
         <div className="container-home">
-          <h2>Outra seção</h2>
-          <p>Conteúdo da nova seção — coloque aqui o que quiser (cards, listas, etc.).</p>
+          <h5>create your own album</h5>
+        <Link to="/album"><button className="create-album">+</button></Link>
         </div>
       </section>
     </>
