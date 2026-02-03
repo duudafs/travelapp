@@ -4,6 +4,7 @@ import Login from './views/Login'
 import Registro from './views/Registro'
 import Album from './views/Album'
 import Layout from './views/Layout'
+import SaoPaulo from './views/Cidades/SaoPaulo'
 
 function AppRoutes() {
   return (
@@ -14,7 +15,9 @@ function AppRoutes() {
        <Route element={<Layout />}>
         <Route path="/home" element={<Home />} />
        <Route path="/album" element={<Album />} />
+       <Route path="/saopaulo" element={<SaoPaulo />} />
       </Route>
+      
       
     </Routes>
   )

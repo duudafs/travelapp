@@ -20,7 +20,7 @@ function Sidebar() {
 
                 <ul className="nav-pills  sidebar-links">
                    
-                    <li>
+                    
                         <Link to="/home">
                             <button 
                                 className={`nav-sidebar-link ${activeLink === 'home' ? 'active' : ''}`} 
@@ -29,8 +29,8 @@ function Sidebar() {
                                 Home
                             </button>
                         </Link>
-                    </li>
-                    <li>
+                    
+                    
                         <Link to="/categorias">
                             <button 
                                 className={`nav-sidebar-link ${activeLink === 'categorias' ? 'active' : ''}`} 
@@ -39,8 +39,7 @@ function Sidebar() {
                                 Categorias
                             </button>
                         </Link>
-                    </li>
-                    <li>
+                    
                         <Link to="/perfil">
                             <button 
                                 className={`nav-sidebar-link ${activeLink === 'perfil' ? 'active' : ''}`} 
@@ -49,7 +48,7 @@ function Sidebar() {
                                 Perfil
                             </button>
                         </Link>
-                    </li>
+                   
                 </ul>
             </div>
         </>

@@ -5,11 +5,12 @@ import Sidebar from '../assets/components/Sidebar'
 import { Link } from "react-router-dom"
 import iconLocal from '../assets/images/iconLocal.png'
 import liberdade from '../assets/images/liberdade.jpg'
+import horizonte from '../assets/images/horizonte.jpg'
 
 function Home() {
   const categorias = [
-    { id: 1, nome: 'Liberdade', desc: 'São Paulo, SP', rota: '/cat1', tipo: 'nacional', images: liberdade, icon: iconLocal, bioma: 'cultural' },
-    { id: 2, nome: 'categoria 2', desc: 'descrição 2', rota: '/cat2', tipo: 'internacional', icon: iconLocal, bioma: 'cultural' },
+    { id: 1, nome: 'São Paulo', desc: 'São Paulo, SP', rota: '/saopaulo', tipo: 'nacional', images: liberdade, icon: iconLocal, bioma: 'cultural' },
+    { id: 2, nome: 'categoria 2', desc: 'Estados Unidos', rota: '/cat2', tipo: 'internacional', icon: iconLocal, bioma: 'cultural' },
     { id: 3, nome: 'categoria 3', desc: 'descrição 3', rota: '/cat3', tipo: 'nacional', icon: iconLocal, bioma: 'praia' },
     { id: 4, nome: 'categoria 4', desc: 'descrição 4', rota: '/cat4', tipo: 'nacional', icon: iconLocal, bioma: 'praia' },
     { id: 5, nome: 'categoria 5', desc: 'descrição 5', rota: '/cat5', tipo: 'internacional', icon: iconLocal, bioma: 'praia' },
@@ -47,12 +48,21 @@ const cardWidth = 300;
 
   return (
     <>
-      <section className="section-categories">
-        <div className="container-home">
-          
-            <Sidebar />
-        
-          <ul className="nav nav-pills-bioma" style={{ marginLeft: '150px', gap: '20px', position: 'relative' }}>
+<section className="section-pesquisar">
+  <div className="card-explore" style={{
+  backgroundImage: `url(${horizonte})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  width: '1200px',
+  height: '500px' 
+}}>
+<Sidebar /> 
+<div className="backdrop-blur-md">
+<input className= "search-input " type="text" placeholder="Search..." >
+  </input>
+
+  <div className="relative">
+ <ul className="nav nav-pills-bioma" style={{ gap: '20px', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <li>
               <button 
                 className={`nav-cat-link-bioma ${activeBioma === 'explorar' ? 'active' : ''}`} 
@@ -65,17 +75,25 @@ const cardWidth = 300;
             <li><button className={`nav-cat-link-bioma ${activeBioma === 'praia' ? 'active' : ''}`} onClick={() => setActiveBioma('praia')}>Praia</button></li>
             <li><button className={`nav-cat-link-bioma ${activeBioma === 'cultural' ? 'active' : ''}`} onClick={() => setActiveBioma('cultural')}>Cultural</button></li>
           </ul>
+  </div>
+</div>
+  </div>
+</section>
 
-          <ul className="nav nav-pills mt-3" style={{ marginLeft: '150px', gap: '20px', position: 'relative' }}>
+      <section className="section-categories">
+        <div className="container-home">          
+          <div style={{textAlign: 'start', marginLeft: '45px', marginBottom: '30px'}}>
+            <h2 className="text-black-800">Destinos Populares</h2>
+            <p style={{marginBottom: '40px', color: '#7a7a7aff'}}>Os destinos mais amados pelos viajantes.</p>
+          </div>
+          <ul className="nav nav-pills mt-3" style={{ marginLeft: '40px', gap: '20px', position: 'relative' }}>
             <li><button className={`nav-cat-link ${activeCategoria === 'todas' ? 'active' : ''}`} onClick={() => setActiveCategoria('todas')}>Todas</button></li>
             <li><button className={`nav-cat-link ${activeCategoria === 'nacional' ? 'active' : ''}`} onClick={() => setActiveCategoria('nacional')}>Nacional</button></li>
             <li><button className={`nav-cat-link ${activeCategoria === 'internacional' ? 'active' : ''}`} onClick={() => setActiveCategoria('internacional')}>Internacional</button></li>
           </ul>
 
           <div className="carousel-wrapper">
-
             <button className="carousel-home-control-prev" onClick={scrollLeft}>‹</button>
-
             <div
               className={`carousel-home carousel-${activeBioma}-${activeCategoria}`}
               ref={carouselRef}
