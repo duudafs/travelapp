@@ -9,7 +9,7 @@ import horizonte from '../assets/images/horizonte.jpg'
 
 function Home() {
   const categorias = [
-    { id: 1, nome: 'São Paulo', desc: 'São Paulo, SP', rota: '/saopaulo', tipo: 'nacional', images: liberdade, icon: iconLocal, bioma: 'cultural' },
+    { id: 1, nome: 'Brasil', desc: 'Brasil', rota: '/brasil', tipo: 'nacional', images: liberdade, icon: iconLocal, bioma: 'cultural' },
     { id: 2, nome: 'categoria 2', desc: 'Estados Unidos', rota: '/cat2', tipo: 'internacional', icon: iconLocal, bioma: 'cultural' },
     { id: 3, nome: 'categoria 3', desc: 'descrição 3', rota: '/cat3', tipo: 'nacional', icon: iconLocal, bioma: 'praia' },
     { id: 4, nome: 'categoria 4', desc: 'descrição 4', rota: '/cat4', tipo: 'nacional', icon: iconLocal, bioma: 'praia' },

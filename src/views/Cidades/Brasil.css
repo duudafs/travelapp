@@ -1,0 +1,95 @@
+.container-praia{
+     margin-top: 310px;
+}
+
+.container-cultural{
+     margin-top: 110px;
+}
+.section-praia {
+  background-color: rgb(255, 255, 255);
+ height: 660px;
+display: flex;
+justify-content: center;
+}
+
+.section-cultural {
+  background-color: rgb(255, 255, 255);
+ height: 660px;
+display: flex;
+justify-content: center;
+}
+.nav-bioma-link {
+   background-color: #db5d08;
+  border-radius: 40px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+margin-left: 40px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 135px;
+  height: 43px;
+}
+
+
+.nav-bioma-link:hover{
+   background-color: #ffffff;
+   color: black;
+    transform: translateY(-4px);
+}
+
+
+.carousel-cidades-wrapper {
+  position: relative;
+  width: 1800px;
+  margin: 0 auto;
+}
+
+.carousel-cidades {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  margin-top: 40px;
+  padding: 16px 40px;
+}
+
+.carousel-cidades::-webkit-scrollbar {
+  display: none;
+}
+
+.card-cidegoria {
+  min-width: 280px;
+  flex-shrink: 0;
+}
+
+
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 30%;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-control-prev:hover {
+     background: rgba(255, 255, 255, 0);
+}
+.carousel-control-next:hover {
+  background: rgba(255, 255, 255, 0);
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
