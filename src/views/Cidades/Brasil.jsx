@@ -21,6 +21,9 @@ function Brasil(){
         { id: 107, cidade: 'Cidade 7', desc: 'descrição 7', rota: '/cid7',  icon: iconLocal, bioma: 'praia' }
       ];
 
+const cidadesPraia = cidades.filter(cid => cid.bioma === 'praia');
+const cidadesCultural = cidades.filter(cid => cid.bioma === 'cultural');
+
      const cardsPerPage = 5;
    
       
@@ -74,7 +77,7 @@ const scrollRight = () => {
               className={`carousel-cidades carousel-${activeCidade}`}
               ref={carouselRef}
             >
-              {cidadesFiltradas.map(cid => (
+              {cidadesPraia.map(cid => (
                 <CardCidade
   key={cid.id}
   cidade={cid.cidade}
@@ -107,7 +110,7 @@ const scrollRight = () => {
               className={`carousel-cidades carousel-${activeCidade}`}
               ref={carouselRef}
             >
-              {cidadesFiltradas.map(cid => (
+              {cidadesCultural.map(cid => (
                 <CardCidade
   key={cid.id}
   cidade={cid.cidade}
