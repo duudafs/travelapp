@@ -30,7 +30,7 @@ justify-content: center;
 
 .section-categories {
   background-color: rgb(255, 255, 255);
- height: 660px;
+ height: 720px;
 display: flex;
 justify-content: center;
 }
@@ -137,6 +137,7 @@ justify-content: center;
 .carousel-home-control-next {
   right: 0;
 }
+
 
 
 .section-other {

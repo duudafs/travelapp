@@ -16,6 +16,7 @@ function AppRoutes() {
         <Route path="/home" element={<Home />} />
        <Route path="/album" element={<Album />} />
        <Route path="/brasil" element={<Brasil />} />
+       
       </Route>
       
       

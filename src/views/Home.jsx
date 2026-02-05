@@ -3,19 +3,19 @@ import { useRef, useState, useEffect } from 'react'
 import CardCategoria from '../assets/components/CardCategoria'
 import Sidebar from '../assets/components/Sidebar'
 import { Link } from "react-router-dom"
-import iconLocal from '../assets/images/iconLocal.png'
-import liberdade from '../assets/images/liberdade.jpg'
+import localIcon from '../assets/images/localIcon.png'
+import brasil3 from '../assets/images/brasil3.jpg'
 import horizonte from '../assets/images/horizonte.jpg'
 
 function Home() {
   const categorias = [
-    { id: 1, nome: 'Brasil', desc: 'Brasil', rota: '/brasil', tipo: 'nacional', images: liberdade, icon: iconLocal, bioma: 'cultural' },
-    { id: 2, nome: 'categoria 2', desc: 'Estados Unidos', rota: '/cat2', tipo: 'internacional', icon: iconLocal, bioma: 'cultural' },
-    { id: 3, nome: 'categoria 3', desc: 'descrição 3', rota: '/cat3', tipo: 'nacional', icon: iconLocal, bioma: 'praia' },
-    { id: 4, nome: 'categoria 4', desc: 'descrição 4', rota: '/cat4', tipo: 'nacional', icon: iconLocal, bioma: 'praia' },
-    { id: 5, nome: 'categoria 5', desc: 'descrição 5', rota: '/cat5', tipo: 'internacional', icon: iconLocal, bioma: 'praia' },
-    { id: 6, nome: 'categoria 6', desc: 'descrição 6', rota: '/cat6', tipo: 'nacional', icon: iconLocal, bioma: 'cultural' },
-    { id: 7, nome: 'categoria 7', desc: 'descrição 7', rota: '/cat7', tipo: 'nacional', icon: iconLocal, bioma: 'praia' }
+    { id: 1, nome: 'Brasil', desc: 'Brasil', rota: '/brasil', tipo: 'AmericaDoSul', images: brasil3, icon: localIcon, bioma: 'cultural' },
+    { id: 2, nome: 'categoria 2', desc: 'Estados Unidos', rota: '/cat2', tipo: 'AmericaDoNorte',  icon: localIcon, bioma: 'cultural' },
+    { id: 3, nome: 'categoria 3', desc: 'descrição 3', rota: '/cat3', tipo: 'AmericaCentral', icon: localIcon, bioma: 'praia' },
+    { id: 4, nome: 'categoria 4', desc: 'descrição 4', rota: '/cat4', tipo: 'Africa', icon: localIcon, bioma: 'praia' },
+    { id: 5, nome: 'categoria 5', desc: 'descrição 5', rota: '/cat5', tipo: 'Europa', icon: localIcon, bioma: 'praia' },
+    { id: 6, nome: 'categoria 6', desc: 'descrição 6', rota: '/cat6', tipo: 'Asia', icon: localIcon, bioma: 'cultural' },
+    { id: 7, nome: 'categoria 7', desc: 'descrição 7', rota: '/cat7', tipo: 'Oceania', icon: localIcon, bioma: 'praia' }
   ];
 
 
@@ -68,7 +68,7 @@ const cardWidth = 300;
                 className={`nav-cat-link-bioma ${activeBioma === 'explorar' ? 'active' : ''}`} 
                 onClick={() => setActiveBioma('explorar')}
               >
-                <img src={iconLocal} alt="Explorar Icon" style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+                <img src={localIcon} alt="Explorar Icon" style={{ width: '16px', height: '16px', marginRight: '8px' }} />
                 Explorar
               </button>
             </li>
@@ -88,8 +88,13 @@ const cardWidth = 300;
           </div>
           <ul className="nav nav-pills mt-3" style={{ marginLeft: '40px', gap: '20px', position: 'relative' }}>
             <li><button className={`nav-cat-link ${activeCategoria === 'todas' ? 'active' : ''}`} onClick={() => setActiveCategoria('todas')}>Todas</button></li>
-            <li><button className={`nav-cat-link ${activeCategoria === 'nacional' ? 'active' : ''}`} onClick={() => setActiveCategoria('nacional')}>Nacional</button></li>
-            <li><button className={`nav-cat-link ${activeCategoria === 'internacional' ? 'active' : ''}`} onClick={() => setActiveCategoria('internacional')}>Internacional</button></li>
+            <li><button className={`nav-cat-link ${activeCategoria === 'AmericaDoSul' ? 'active' : ''}`} onClick={() => setActiveCategoria('AmericaDoSul')}>América do Sul</button></li>
+            <li><button className={`nav-cat-link ${activeCategoria === 'AmericaDoNorte' ? 'active' : ''}`} onClick={() => setActiveCategoria('AmericaDoNorte')}>América do Norte</button></li>
+            <li><button className={`nav-cat-link ${activeCategoria === 'AmericaDoCentral' ? 'active' : ''}`} onClick={() => setActiveCategoria('AmericaDoCentral')}>América do Central</button></li>
+            <li><button className={`nav-cat-link ${activeCategoria === 'Africa' ? 'active' : ''}`} onClick={() => setActiveCategoria('Africa')}>África</button></li>
+            <li><button className={`nav-cat-link ${activeCategoria === 'Europa' ? 'active' : ''}`} onClick={() => setActiveCategoria('Europa')}>Europa</button></li>
+            <li><button className={`nav-cat-link ${activeCategoria === 'Asia' ? 'active' : ''}`} onClick={() => setActiveCategoria('Asia')}>Ásia</button></li>
+            <li><button className={`nav-cat-link ${activeCategoria === 'Oceania' ? 'active' : ''}`} onClick={() => setActiveCategoria('Oceania')}>Oceania</button></li>
           </ul>
 
           <div className="carousel-wrapper">
@@ -118,6 +123,8 @@ const cardWidth = 300;
 
         </div>
       </section>
+
+
 
       <section className="section-other">
         <div className="container-home">
