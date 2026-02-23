@@ -4,7 +4,7 @@ import Login from './views/Login'
 import Registro from './views/Registro'
 import Album from './views/Album'
 import Layout from './views/Layout'
-import Brasil from './views/Cidades/Brasil'
+import Pais from './views/Pais'
 
 function AppRoutes() {
   return (
@@ -15,7 +15,7 @@ function AppRoutes() {
        <Route element={<Layout />}>
         <Route path="/home" element={<Home />} />
        <Route path="/album" element={<Album />} />
-       <Route path="/brasil" element={<Brasil />} />
+       <Route path="/paises/:slug" element={<Pais />} />
        
       </Route>
       

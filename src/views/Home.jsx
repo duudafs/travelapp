@@ -8,30 +8,19 @@ import brasil3 from '../assets/images/brasil3.jpg'
 import horizonte from '../assets/images/horizonte.jpg'
 
 function Home() {
-  const categorias = [
-    { id: 1, nome: 'Brasil', desc: 'Brasil', rota: '/brasil', tipo: 'AmericaDoSul', images: brasil3, icon: localIcon, bioma: 'cultural' },
-    { id: 2, nome: 'categoria 2', desc: 'Estados Unidos', rota: '/cat2', tipo: 'AmericaDoNorte',  icon: localIcon, bioma: 'cultural' },
-    { id: 3, nome: 'categoria 3', desc: 'descrição 3', rota: '/cat3', tipo: 'AmericaCentral', icon: localIcon, bioma: 'praia' },
-    { id: 4, nome: 'categoria 4', desc: 'descrição 4', rota: '/cat4', tipo: 'Africa', icon: localIcon, bioma: 'praia' },
-    { id: 5, nome: 'categoria 5', desc: 'descrição 5', rota: '/cat5', tipo: 'Europa', icon: localIcon, bioma: 'praia' },
-    { id: 6, nome: 'categoria 6', desc: 'descrição 6', rota: '/cat6', tipo: 'Asia', icon: localIcon, bioma: 'cultural' },
-    { id: 7, nome: 'categoria 7', desc: 'descrição 7', rota: '/cat7', tipo: 'Oceania', icon: localIcon, bioma: 'praia' }
-  ];
+  const [categorias, setCategorias] = useState([])
 
 
 const visibleCards = 3;
 const cardWidth = 300; 
 
-  const [activeBioma, setActiveBioma] = useState('explorar');
+  
   const [activeCategoria, setActiveCategoria] = useState('todas');
   const carouselRef = useRef(null);
 
   const categoriasFiltradas = categorias.filter(cat => {
-    const biomaMatch = activeBioma === 'explorar' || cat.bioma === activeBioma;
-    const categoriaMatch = activeCategoria === 'todas' || cat.tipo === activeCategoria;
-    return biomaMatch && categoriaMatch;
-  });
-
+  return activeCategoria === 'todas' || cat.continente === activeCategoria;
+});
   const scrollLeft = () => {
     carouselRef.current.scrollBy({ left: -cardWidth * visibleCards, behavior: 'smooth' });
   };
@@ -42,7 +31,13 @@ const cardWidth = 300;
 
   useEffect(() => {
     carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-  }, [activeBioma, activeCategoria]);
+   fetch("http://localhost:3000/api/paises")
+    .then(res => res.json())
+    .then(data => {
+      setCategorias(data)
+    })
+    .catch(err => console.log("erro ao buscar países:", err))
+}, [])
 
 
 
@@ -61,21 +56,7 @@ const cardWidth = 300;
 <input className= "search-input " type="text" placeholder="Search..." >
   </input>
 
-  <div className="relative">
- <ul className="nav nav-pills-bioma" style={{ gap: '20px', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <li>
-              <button 
-                className={`nav-cat-link-bioma ${activeBioma === 'explorar' ? 'active' : ''}`} 
-                onClick={() => setActiveBioma('explorar')}
-              >
-                <img src={localIcon} alt="Explorar Icon" style={{ width: '16px', height: '16px', marginRight: '8px' }} />
-                Explorar
-              </button>
-            </li>
-            <li><button className={`nav-cat-link-bioma ${activeBioma === 'praia' ? 'active' : ''}`} onClick={() => setActiveBioma('praia')}>Praia</button></li>
-            <li><button className={`nav-cat-link-bioma ${activeBioma === 'cultural' ? 'active' : ''}`} onClick={() => setActiveBioma('cultural')}>Cultural</button></li>
-          </ul>
-  </div>
+
 </div>
   </div>
 </section>
@@ -90,7 +71,7 @@ const cardWidth = 300;
             <li><button className={`nav-cat-link ${activeCategoria === 'todas' ? 'active' : ''}`} onClick={() => setActiveCategoria('todas')}>Todas</button></li>
             <li><button className={`nav-cat-link ${activeCategoria === 'AmericaDoSul' ? 'active' : ''}`} onClick={() => setActiveCategoria('AmericaDoSul')}>América do Sul</button></li>
             <li><button className={`nav-cat-link ${activeCategoria === 'AmericaDoNorte' ? 'active' : ''}`} onClick={() => setActiveCategoria('AmericaDoNorte')}>América do Norte</button></li>
-            <li><button className={`nav-cat-link ${activeCategoria === 'AmericaDoCentral' ? 'active' : ''}`} onClick={() => setActiveCategoria('AmericaDoCentral')}>América do Central</button></li>
+            <li><button className={`nav-cat-link ${activeCategoria === 'AmericaCentral' ? 'active' : ''}`} onClick={() => setActiveCategoria('AmericaCentral')}>América do Central</button></li>
             <li><button className={`nav-cat-link ${activeCategoria === 'Africa' ? 'active' : ''}`} onClick={() => setActiveCategoria('Africa')}>África</button></li>
             <li><button className={`nav-cat-link ${activeCategoria === 'Europa' ? 'active' : ''}`} onClick={() => setActiveCategoria('Europa')}>Europa</button></li>
             <li><button className={`nav-cat-link ${activeCategoria === 'Asia' ? 'active' : ''}`} onClick={() => setActiveCategoria('Asia')}>Ásia</button></li>
@@ -100,7 +81,7 @@ const cardWidth = 300;
           <div className="carousel-wrapper">
             <button className="carousel-home-control-prev" onClick={scrollLeft}>‹</button>
             <div
-              className={`carousel-home carousel-${activeBioma}-${activeCategoria}`}
+              className={`carousel-home carousel-${activeCategoria}`}
               ref={carouselRef}
             >
               {categoriasFiltradas.map(cat => (
@@ -108,11 +89,11 @@ const cardWidth = 300;
                   key={cat.id}
                   nome={cat.nome}
                   desc={cat.desc}
-                  rota={cat.rota}
-                  tipo={cat.tipo}
+                  rota={`/paises/${cat.slug}`}
+                  continente={cat.continente}
                   images={cat.images}
                   icon={cat.icon}
-                  bioma={cat.bioma}
+                  
                 />
               ))}
             </div>
