@@ -2,6 +2,11 @@ import "./Registro.css"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import PasswordInput from "../assets/components/PasswordInput";
+import { 
+  User, Mail, Lock, MapPin, Globe, 
+  ArrowRight, Eye, EyeOff, Plane, 
+  ChevronRight, Sparkles, CheckCircle2 
+} from 'lucide-react';
 
 
 function Registro() {
@@ -137,5 +142,6 @@ const handleSubmit = async (e) => {
         </div>
     )
 }
+
 
 export default Registro

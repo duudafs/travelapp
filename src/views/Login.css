@@ -33,52 +33,45 @@
 }
 
 
-.card-login {
-  background: white;
-  width: 420px;
-  padding: 30px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 
 
-.email-field{
-  width: 100%;
-  max-width: 360px;
+
+.email-field {
+  width: 110%;
   font-size: 14px;
-  height: 38px;
+  height: 50px;
   margin-bottom: 39px;
-  padding-left: 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: #f3eeee;
+  color: #080c30;
+  padding-left: 55px;
+  border: 1px solid #e4e4e4;
+  border-radius: 15px;
+  background-color: #ffffff;
+ 
 }
 
 
 .pass-field {
-  width: 100%;
-  max-width: 360px;
-  height: 37px;
-    font-size: 14px;
+  width: 110%;
+  height: 50px;
+  font-size: 14px;
   margin-bottom: 13px;
-  padding-left: 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: #f3eeee;
+  color: #080c30;
+  padding-left: 55px;
+  border: 1px solid #e4e4e4;
+  border-radius: 15px;
+  background-color: #ffffff;
 }
 
 .text-welcome,
 .text-about {
   color: white;
   text-align: center;
-  
+
 }
 
 .submit-login {
-  width: 100%;
+  width: 110%;
   color: white;
   background-color: rgb(71, 160, 130);
   border-radius: 20px;
@@ -87,16 +80,16 @@
 }
 
 .submit-login:hover {
- background-color: rgb(142, 206, 158);
+  background-color: rgb(142, 206, 158);
   transform: translateY(-4px);
-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.forgot-pass{
+.forgot-pass {
   font-size: small;
- margin-left: 230px;
- font-weight: bold;
- color: rgb(85, 84, 84);
+  margin-left: 230px;
+  font-weight: bold;
+  color: rgb(85, 84, 84);
 }
 
 .divider-line {
@@ -108,7 +101,41 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px
   margin: 20px 0;
 }
 
-.registrar{
+.registrar {
   font-size: 14px;
   margin-top: 10px;
+}
+
+.container-login {
+  display: flex;
+  height: 800px;
+  width: 70%;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+}
+
+.lado-esquerdo {
+  flex: 1;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background-color: #080c30;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.171) 2px, transparent 1px);
+
+  background-size: 49px 80px;
+}
+
+.lado-direito {
+  flex: 1.5;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+
+  background-color: #ffffff;
 }
