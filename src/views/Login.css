@@ -38,7 +38,7 @@
 
 
 .email-field {
-  width: 110%;
+  width: 100%;
   font-size: 14px;
   height: 50px;
   margin-bottom: 39px;
@@ -51,18 +51,6 @@
 }
 
 
-.pass-field {
-  width: 110%;
-  height: 50px;
-  font-size: 14px;
-  margin-bottom: 13px;
-  color: #080c30;
-  padding-left: 55px;
-  border: 1px solid #e4e4e4;
-  border-radius: 15px;
-  background-color: #ffffff;
-}
-
 .text-welcome,
 .text-about {
   color: white;
@@ -71,7 +59,7 @@
 }
 
 .submit-login {
-  width: 110%;
+  width: 100%;
   color: white;
   background-color: rgb(71, 160, 130);
   border-radius: 20px;
@@ -96,7 +84,7 @@
   border: none;
   height: 1px;
   margin-top: 10px;
-  width: 100%;
+  width: 110%;
   background-color: #e6e6e6;
   margin: 20px 0;
 }
@@ -138,4 +126,13 @@
   border-bottom-right-radius: 40px;
 
   background-color: #ffffff;
+}
+
+.p-password {
+  width: 100% !important;
+  display: block !important;
+}
+
+.p-password input {
+  width: 100% !important;
 }

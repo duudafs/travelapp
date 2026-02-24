@@ -126,6 +126,7 @@ const handleSubmit = async (e) => {
                             placeholder="Senha..."
                             value={senha}
                             onChange={setSenha}
+                            showFooter={true}
                         />
 
                       

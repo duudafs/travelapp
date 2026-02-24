@@ -1,4 +1,5 @@
 import './Login.css'
+import { useState } from "react";
 import { Link } from "react-router-dom"
 import {
   User, Mail, Lock, MapPin, Globe,
@@ -6,8 +7,18 @@ import {
   ChevronRight, Sparkles, CheckCircle2
 } from 'lucide-react';
 import PasswordInput from '../assets/components/PasswordInput';
+import Registro from "./Registro";
+
 
 function Login() {
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Senha:", senha);
+  };
+  const [senha, setSenha] = useState("");
+
   return (
     <div className="container-login">
       <div className="lado-esquerdo">
@@ -83,24 +94,33 @@ function Login() {
       </div>
       <div className="lado-direito justify-content-center d-flex align-items-center mb-5">
         <div className="grid text-center ms-4 ">
-          <div className="card-login">
-            <h2 className="display-6 text-start mb-5" style={{fontWeight: "900"}}>Fazer login</h2>
-            <div style={{position: "relative"}}>
-              <Mail size={18} style={{position: "absolute", top: "16px", left: "20px", color: "#a8a8a8"}} />
-              <input type="text" placeholder="nome@email.com" className="email-field" />
-            </div>
+          <div className="card-login" style={{width: "500px"}}>
+            <h2 className="display-6 text-start mb-5" style={{ fontWeight: "900" }}>Fazer login</h2>
+            <form onSubmit={handleSubmit}>
+              <div style={{ position: "relative" }}>
+                <Mail size={18} style={{ position: "absolute", top: "16px", left: "20px", color: "#a8a8a8" }} />
+                <input type="text" placeholder="nome@email.com" className="email-field" />
+              </div>
 
-<div style={{position: "relative"}}>
-  <input type="password" placeholder="••••••••" className="pass-field" />
-            <div className="forgot-pass">
-              Esqueceu a senha?
+            <div style={{ position: "relative", width: "100%" }}>
+                <PasswordInput
+                  value={senha}
+                  onChange={setSenha}
+                />
+              </div>
+
+              <button className="submit-login">submit</button>
+            </form>
+
+            <div className="divider-line" >
             </div>
-</div>
-           
-            <button className="submit-login">submit</button>
-            <div className="divider-line">
+            <div className="align-items-center justify-content-center">
+              <span style={{ fontSize: "14px", color: "#a8a8a8"}}>ou</span>
+             
               <div className="registrar">
+                
                 Não tem conta? <Link to="/registro"><strong style={{ color: "rgb(71, 160, 130)" }}>Clique aqui</strong></Link>
+
 
               </div>
             </div>
