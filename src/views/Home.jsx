@@ -3,9 +3,7 @@ import { useRef, useState, useEffect } from 'react'
 import CardCategoria from '../assets/components/CardCategoria'
 import Sidebar from '../assets/components/Sidebar'
 import { Link } from "react-router-dom"
-import localIcon from '../assets/images/localIcon.png'
-import brasil3 from '../assets/images/brasil3.jpg'
-import horizonte from '../assets/images/horizonte.jpg'
+
 
 function Home() {
   const [categorias, setCategorias] = useState([])
@@ -45,7 +43,7 @@ const cardWidth = 300;
     <>
 <section className="section-pesquisar">
   <div className="card-explore" style={{
-  backgroundImage: `url(${horizonte})`,
+  backgroundImage: `url(http://localhost:3000/images/horizonte.jpg)`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   width: '1200px',
@@ -91,7 +89,7 @@ const cardWidth = 300;
                   desc={cat.desc}
                   rota={`/paises/${cat.slug}`}
                   continente={cat.continente}
-                  images={cat.images}
+                  images={cat.imagem}
                   icon={cat.icon}
                   
                 />

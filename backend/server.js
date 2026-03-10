@@ -96,6 +96,8 @@ app.get("/api/paises/:slug/cidades", (req, res) => {
   }
 })
 
+app.use("/images", express.static("images"))
+
 app.listen(3000, () => {
   console.log('backend rodando na porta 3000')
 })

@@ -42,9 +42,19 @@ function Pais() {
   };
 
   return (
-    <div>
+    <>
 
-      <h1>{slug.toUpperCase()}</h1>
+
+<section className="introducao-cidade">
+
+ <h1 className="slug-nome" style={{marginTop: '0px'}}>{slug.toUpperCase()}</h1>
+ 
+
+      </section>
+
+    <div>
+      
+     
 
       {/* PRAIA */}
       <section>
@@ -89,7 +99,9 @@ function Pais() {
       </section>
 
     </div>
+     </>
   );
 }
+
 
 export default Pais;
