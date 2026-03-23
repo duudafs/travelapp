@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import CardCidade from '../assets/components/CardCidade'
-import Layout from "./Layout";
+import Layout from "./Layout"
+import { Link } from "react-router-dom"
 import "./Pais.css";
+import {ArrowLeft} from 'lucide-react'
 
 function Pais() {
 
@@ -43,65 +45,27 @@ function Pais() {
 
   return (
     <>
-
-
-<section className="introducao-cidade">
-
- <h1 className="slug-nome" style={{marginTop: '0px'}}>{slug.toUpperCase()}</h1>
- 
-
+    <main className="conteudo-pagina">
+<section className="section-rosa">
+        <h1 className="titulo-slug">
+          {slug}
+        </h1>
+        
+        <p className="texto-descricao">
+          descrição
+        </p>
       </section>
+      <section className="section-azul">
+        <p>oi</p>
+      </section>
+    </main>
 
-    <div>
       
-     
-
-      {/* PRAIA */}
-      <section>
-        <h2>Praia</h2>
-
-        <div className="carousel-wrapper">
-          <button onClick={scrollPraiaLeft}>‹</button>
-
-          <div className="carousel" ref={praiaRef}>
-            {cidadesPraia.map(cidade => (
-              <CardCidade
-                key={cidade.id}
-                cidade={cidade.nome}
-                
-              />
-            ))}
-          </div>
-
-          <button onClick={scrollPraiaRight}>›</button>
-        </div>
-      </section>
-
-      {/* CULTURAL */}
-      <section>
-        <h2>Cultural</h2>
-
-        <div className="carousel-wrapper">
-          <button onClick={scrollCulturalLeft}>‹</button>
-
-          <div className="carousel" ref={culturalRef}>
-            {cidadesCultural.map(cidade => (
-              <CardCidade
-                key={cidade.id}
-                cidade={cidade.nome}
-               
-              />
-            ))}
-          </div>
-
-          <button onClick={scrollCulturalRight}>›</button>
-        </div>
-      </section>
-
-    </div>
+    
      </>
   );
 }
 
 
 export default Pais;
+

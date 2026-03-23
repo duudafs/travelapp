@@ -1,19 +1,51 @@
-body{
-      margin: 0;
-      
-}
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
 
-section{
-  margin:0;
-}
+.conteudo-pagina {
+          padding-top: 80px; 
+        }
+
+        .section-rosa {
+          background-color: #FFC0CB; /* Cor Rosa */
+          height: 600px;
+          width: 100%;
+          
+          /* Configuração do Grid para alinhar tudo no topo */
+          display: grid;
+       
+          align-content: start; /* Garante que as linhas fiquem no topo da secção */
+          
+          padding: 40px; /* Espaço para o texto não colar nas bordas da janela */
+        }
+
+        .titulo-slug {
+          font-family: sans-serif;
+          font-size: 3rem;
+          text-transform: uppercase;
+          color: #333;
+          margin: 0 0 10px 0; 
+        }
+
+        .texto-descricao {
+          font-family: sans-serif;
+          font-size: 1.2rem;
+          color: #555;
+          margin: 0;
+        }
+
+ .section-azul {
+          background-color: #133eb6; /* Cor Rosa */
+          height: 600px;
+          width: 100%;
+          display: grid;
+          align-content: start; 
+          padding: 40px; /* Espaço para o texto não colar nas bordas da janela */
+        }
 
 
-.introducao-cidade{
-  height: 200px;
-  background-color: #d42525;
-  top: 0;
-  top: 0;
-}
 
 
 .carousel-wrapper {
